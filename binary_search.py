@@ -1,13 +1,43 @@
+'''
+def binary_search(L, x, left, right):
+    mid = (left + right) // 2
+
+    if mid == x:
+        return mid
+
+    if left > right:
+        return -1
+
+    if mid > x:
+        right = mid-1
+        i = binary_search(L, x, left, right)
+
+    else:
+        left = mid+1
+        i = binary_search(L, x, left, right)
+
+    return i
+'''
+
+
+
+
+
 def binary_search(L,x):
     left, right = 0, len(L)-1
+
     while left <= right:
         mid = (left+right)//2
+
         if L[mid] == x:
             return mid
+
         if L[mid] > x:
             right = mid-1
+
         else:
             left = mid+1
+
     return -1
 
 '''

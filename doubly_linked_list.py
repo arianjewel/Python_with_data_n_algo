@@ -54,8 +54,8 @@ class DoublyLinkedList:
 
         while current_node:
             if current_node.data == data:
-                new_node.next = current_node.next
                 current_node.next.prev = new_node
+                new_node.next = current_node.next
                 new_node.prev = current_node
                 current_node.next = new_node
 

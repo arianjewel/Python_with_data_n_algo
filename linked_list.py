@@ -84,3 +84,36 @@ class LinkedList:
 
         else:
             previous_node.next = current_node.next
+
+
+    def reverse_linked_list(self):
+
+        #Initializing values
+        previous_node = None
+        current_node = self.head.next
+        next_node = current_node.next
+
+        #looping
+        while current_node:
+            #reversing the link
+            current_node.next = previous_node
+
+            #moving to next node
+            previous_node = current_node
+            current_node = next_node
+            if current_node:
+                if current_node.next:
+                    next_node = current_node.next
+                else:
+                    next_node = None
+
+        #initializing head
+        self.head.next = previous_node
+
+if __name__ == '__main__':
+    ll = LinkedList()
+
+    for i in range(1,11):
+        ll.prepend(i)
+    ll.reverse_linked_list()
+    print(ll)
